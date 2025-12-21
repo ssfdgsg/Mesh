@@ -142,4 +142,3 @@ func readSSE(r io.Reader, onEvent func(event string, data []byte)) error {
 	}
 	return io.EOF
 }
-

@@ -199,4 +199,3 @@ func (h *hist) percentile(p float64) time.Duration {
 	}
 	return h.bounds[len(h.bounds)-1]
 }
-

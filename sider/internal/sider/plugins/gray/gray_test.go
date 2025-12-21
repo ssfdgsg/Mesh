@@ -9,4 +9,3 @@ func TestPickCanaryDeterministic(t *testing.T) {
 		t.Fatalf("expected deterministic pick, got %v vs %v", a, b)
 	}
 }
-

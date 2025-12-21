@@ -206,4 +206,3 @@ func (p *pacer) waitN(n int) error {
 	<-timer.C
 	return nil
 }
-
