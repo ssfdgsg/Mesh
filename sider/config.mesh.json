@@ -3,12 +3,26 @@
   "listeners": [
     {
       "listen": ":19000",
+      "listen_network": "quic",
+      "listen_tls": {
+        "cert_file": "./certs/server.crt",
+        "key_file": "./certs/server.key",
+        "alpn": "grpc-quic"
+      },
       "upstreams": ["127.0.0.1:9000"],
+      "upstream_network": "tcp",
       "plugins": []
     },
     {
-      "listen": ":18999",
-      "upstreams": ["127.0.0.1:8999"],
+      "listen": ":17999",
+      "listen_network": "quic",
+      "listen_tls": {
+        "cert_file": "./certs/server.crt",
+        "key_file": "./certs/server.key",
+        "alpn": "grpc-quic"
+      },
+      "upstreams": ["127.0.0.1:7999"],
+      "upstream_network": "tcp",
       "plugins": []
     }
   ]

@@ -173,7 +173,7 @@ func pipe(ctx context.Context, a net.Conn, b net.Conn) {
 		buf := bufPool.Get().(*[]byte)
 		n, _ := io.CopyBuffer(a, b, *buf)
 		if n > 0 {
-			log.Printf("message received: from=%s to=%s bytes=%d", b.RemoteAddr(), a.RemoteAddr(), n)
+			log.Printf("upstream message to listen: from=%s to=%s bytes=%d", b.RemoteAddr(), a.RemoteAddr(), n)
 		}
 		bufPool.Put(buf)
 		closeWrite(a)
