@@ -1,0 +1,18 @@
+{
+  "dial_timeout_ms": 3000,
+  "listeners": [
+    {
+      "listen": ":8443",
+      "listen_network": "quic",
+      "listen_tls": {
+        "cert_file": "./certs/server.crt",
+        "key_file": "./certs/server.key",
+        "alpn": "sider-quic"
+      },
+      "upstreams": ["127.0.0.1:9000"],
+      "upstream_network": "tcp",
+      "plugins": []
+    }
+  ]
+}
+

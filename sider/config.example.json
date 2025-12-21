@@ -1,0 +1,20 @@
+{
+  "dial_timeout_ms": 3000,
+  "listeners": [
+    {
+      "listen": ":8080",
+      "upstreams": ["127.0.0.1:9000", "127.0.0.1:9001"],
+      "plugins": [
+        {
+          "name": "gray",
+          "config": { "stable": "127.0.0.1:9000", "canary": "127.0.0.1:9001", "canary_percent": 10, "salt": "v1" }
+        },
+        {
+          "name": "bbr",
+          "config": { "min_bps": 65536, "max_bps": 67108864, "gain": 1.25, "update_ms": 500 }
+        }
+      ]
+    }
+  ]
+}
+
