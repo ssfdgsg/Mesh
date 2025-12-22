@@ -1,0 +1,24 @@
+{
+  "dial_timeout_ms": 3000,
+  "listeners": [
+    {
+      "listen": ":19001",
+      "upstreams": ["127.0.0.1:9001"],
+      "plugins": [
+        {
+          "name": "bbr",
+          "config": {
+            "initial_cwnd": 14600,
+            "min_rtt_ms": 10,
+            "probe_rtt_duration_ms": 200,
+            "high_gain": 2.77,
+            "drain_gain": 0.36,
+            "probe_bw_gains": [1.25, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            "bandwidth_window_size": 10,
+            "rtt_window_size": 10
+          }
+        }
+      ]
+    }
+  ]
+}

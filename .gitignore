@@ -8,6 +8,8 @@ bin/
 *.test
 *.out
 *.prof
+sider/pprof_output/
+
 
 # Go workspace/cache
 go.work
