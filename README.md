@@ -185,4 +185,11 @@ go run . --config ./sider.config.json --ui ../web/dist
 
 将旁路代理实现、插件、配置和运行时放在 `sider/`，把所有集中式控制、管理与下发逻辑放在 `router/`，以保持清晰的关注点分离与可维护性。
 
+## 项目边界与非目标 (Project Scope & Non-Goals)
 
+本项目致力于**保持极致轻量级**的纯粹 L4 代理与简单控制面架构。为避免架构膨胀与复杂化，以下高级网格特性被明确定义为**非目标 (Out of Scope)**，不再计划引入：
+
+- **动态服务注册与发现**: 不支持对接 Kubernetes API、Consul 或 Eureka 等服务发现后端。配置将专注于静态驱动与简单 API 推送。
+- **链路追踪与深度可观测性**: 不原生集成 OpenTelemetry 的全链路追踪能力。仅保留基础连接日志与最核心状态。
+- **Kubernetes 深度集成**: 不支持 CRD 抽象、Helm 部署体系，也不引入自动注入 (Auto-injection) 相关的本地流量劫持。
+- **复杂的 L7 路由体系**: 不构建全功能的 HTTP header/path 路由，保持为专注 TCP/QUIC 的旁路代理。

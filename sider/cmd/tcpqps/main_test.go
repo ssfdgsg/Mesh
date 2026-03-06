@@ -29,12 +29,12 @@ func startTestServer(addr string) (net.Listener, error) {
 				defer conn.Close()
 				buf := make([]byte, 1024)
 				for {
-					_, err := conn.Read(buf)
+					n, err := conn.Read(buf)
 					if err != nil {
 						return
 					}
 					// 回显数据
-					conn.Write(buf)
+					conn.Write(buf[:n])
 				}
 			}(c)
 		}

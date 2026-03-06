@@ -10,6 +10,11 @@ bin/
 *.prof
 sider/pprof_output/
 
+# TLS/SSL certificates and keys (SENSITIVE - DO NOT COMMIT)
+*.key
+*.pem
+sider/certs/server.key
+sider/certs/*.key
 
 # Go workspace/cache
 go.work

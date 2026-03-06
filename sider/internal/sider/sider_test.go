@@ -60,7 +60,7 @@ func TestProxyBasic(t *testing.T) {
 		DialTimeoutMs: 5000,
 		Listeners: []ListenerConfig{
 			{
-				Listen:    "127.0.0.1:0",
+				Listen:    "127.0.0.1:20001",
 				Upstreams: []string{upstreamAddr},
 			},
 		},
@@ -123,7 +123,7 @@ func BenchmarkProxyThroughput(b *testing.B) {
 		DialTimeoutMs: 5000,
 		Listeners: []ListenerConfig{
 			{
-				Listen:    "127.0.0.1:0",
+				Listen:    "127.0.0.1:20001",
 				Upstreams: []string{upstreamAddr},
 			},
 		},
@@ -202,7 +202,7 @@ func TestSiderWithPprof(t *testing.T) {
 		DialTimeoutMs: 5000,
 		Listeners: []ListenerConfig{
 			{
-				Listen:    "127.0.0.1:0",
+				Listen:    "127.0.0.1:20001",
 				Upstreams: []string{upstreamAddr},
 			},
 		},
